@@ -10,6 +10,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     int scoreTeamA = 0;
+    int scoreTeamB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Increase score by three
+     * Displays the given score for Team B.
+     */
+    public void displayForTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    /**
+     * Increase score by three for Team A
      */
     public void plusThreeTeamA(View view){
         scoreTeamA = scoreTeamA + 3;
@@ -35,7 +44,15 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      *
-     * Increase score by two
+     * Increase score by three for Team B
+     */
+    public void plusThreeTeamB(View view){
+        scoreTeamB = scoreTeamB + 3;
+        displayForTeamB(scoreTeamB);
+    }
+    /**
+     *
+     * Increase score by two for Team A
      */
     public void plusTwoTeamA(View view){
         scoreTeamA = scoreTeamA + 2;
@@ -44,10 +61,28 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      *
-     * Increase score by 1
+     * Increase score by two for Team B
+     */
+    public void plusTwoTeamB(View view){
+        scoreTeamB = scoreTeamB + 2;
+        displayForTeamB(scoreTeamB);
+    }
+
+    /**
+     *
+     * Increase score by 1 for Team A
      */
     public void freeThrowTeamA(View view){
         scoreTeamA = scoreTeamA + 1;
         displayForTeamA(scoreTeamA);
+    }
+
+    /**
+     *
+     * Increase score by one for Team B
+     */
+    public void freeThrowTeamB(View view){
+        scoreTeamB = scoreTeamB + 1;
+        displayForTeamB(scoreTeamB);
     }
 }
